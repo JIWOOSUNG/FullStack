@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page08_selector</title>
+        <style>
+            div > p:first-child {
+                background-color: antiquewhite;
+            }
+            div > p:last-child {
+                background-color: aquamarine;
+            }
+            div > p:nth-child(1) {
+                border: 2px dotted tomato;
+            }
+            /* 2번째 자식p를 선택해서 배경색 pink로 주세요 */
+            div p:nth-child(2) {
+                background-color: pink;
+                font-size: 100%; /*16px*/
+            }
+            div p:nth-child(3) {
+                font-size: 200%; /*2em*/
+                background-color: lavender;
+            }
+            div p:nth-child(2n + 1) {
+                /*홀수번째 선택: 2n+1, 짝수 선택: 2n*/
+                border: thick dashed blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>nth-child() 활용</h1>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+        </div>
+    </body>
+</html>
+<!-- page08_selector.html -->

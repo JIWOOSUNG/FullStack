@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page34_flexlayout.html</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 1px;
+                box-sizing: border-box;
+            }
+            body {
+                height: 100vh;
+                /* background-color: antiquewhite; */
+                text-align: center;
+                font-size: 1.5rem;
+                display: flex;
+                flex-direction: column;
+            }
+            header {
+                background-color: #ac9;
+                height: 15vh;
+                padding: 2em 0;
+            }
+            footer {
+                background-color: #ac9;
+                height: 10vh;
+                padding: 1em 0;
+            }
+            .container {
+                display: flex;
+                flex: 1;
+                /* flex-grow:1, flex-shrink:1, flex-basis:0% */
+            }
+            .left {
+                flex: 1 1 120px;
+                background: #ca9;
+                /*
+                flex-grow: 1
+                flex-shrink: 1
+                flex-basis: 120px;
+                */
+            }
+            .right {
+                flex: 1 1 120px;
+                background: #ca9;
+            }
+            main {
+                flex: 5 5 auto;
+                height: 75vh;
+            }
+            /* 미디어 쿼리 
+            550px이하 일 때
+            */
+            @media screen and (max-width: 550px) {
+                .container {
+                    flex-direction: column;
+                }
+                main {
+                    padding: 1em 0;
+                    height: 40vh;
+                }
+            }
+            /* 1024px 이상 일때 */
+            @media screen and (min-width: 1024px) {
+                #wrap {
+                    width: 90%;
+                    max-width: 1024px;
+                    margin: auto;
+                    height: 100vh;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>Header</header>
+            <div class="container">
+                <aside class="left">Left</aside>
+                <main>Main</main>
+                <aside class="right">Right</aside>
+            </div>
+            <footer>Footer</footer>
+        </div>
+    </body>
+</html>
+<!-- page34_flexlayout.html -->

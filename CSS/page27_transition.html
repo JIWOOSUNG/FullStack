@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page27_transition.html</title>
+        <style>
+            .bar {
+                width: 300px;
+                background-color: #0033ff;
+                color: white;
+                margin: 5px;
+                padding: 2px;
+                /* 전환 속성=>폭 지속시간=> 3초 */
+                transition-property: width;
+                transition-duration: 3s;
+            }
+            .bar:hover {
+                width: 1000px;
+            }
+            .bar:nth-child(1) {
+                transition-timing-function: linear;
+            }
+            .bar:nth-child(2) {
+                transition-timing-function: ease;
+            }
+            .bar:nth-child(3) {
+                transition-timing-function: ease-in;
+            }
+            .bar:nth-child(4) {
+                transition-timing-function: ease-out;
+            }
+            .bar:nth-child(5) {
+                transition-timing-function: ease-in-out;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="bar">linear: 일정한 속도로</div>
+            <div class="bar">ease: 느리게-빠르게-느리게</div>
+            <div class="bar">ease-in: 느리게-빠르게</div>
+            <div class="bar">ease-out: 빠르게-느리게</div>
+            <div class="bar">ease-in-out: 느리게-빠르게-느리게</div>
+        </div>
+    </body>
+</html>
+<!-- page27_transition.html -->

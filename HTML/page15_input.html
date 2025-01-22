@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page15_input.html</title>
+    </head>
+    <body>
+        <div>
+            <h1>다양한 입력 폼</h1>
+            <form name="joinFrm" action="join.jsp" method="get">
+                <!-- method="post" enctype="multipart/form-data">
+                -->
+                <label for="userName">이름</label>
+                <input type="text" name="name" id="userName" /><br />
+                <label for="photo">사진</label>
+                <input type="file" name="photo" id="photo" /><br />
+                <!-- 파일을 업로드하려면 form태그의 method는 post로 지정해야 한다
+                     그리고 enctype="multipart/form-data" 로 지정해야 한다
+                     그래야 파일 데이터가 서버에 전달된다
+                 -->
+                <label for="pwd">비밀번호</label>
+                <input type="password" name="pwd" id="pwd" /><br />
+
+                <!-- 단일 선택 : radio ==> input name이 같은 것 중에 하나를 선택 함
+                     다중 선택 : checkbox 
+                -->
+                성별 :
+                <label for="gender1"><input type="radio" name="gender" id="gender1" value="Male" />남자 </label>
+                <label for="gender2"
+                    ><input type="radio" name="gender" id="gender2" value="Female" checked="checked" />여자</label
+                >
+                <br />
+
+                취미:
+                <label for="reading"
+                    ><input type="checkbox" name="hobby" id="reading" value="reading" checked />독서</label
+                >
+                <label for="music"><input type="checkbox" name="hobby" id="music" value="music" />음악감상</label>
+                <label for="movie"><input type="checkbox" name="hobby" id="movie" value="movie" />영화감상</label>
+                <br />
+                드롭다운 리스트(콤보박스):
+                <select name="job">
+                    <option value="">::직업을 선택하세요::</option>
+                    <option value="frontend">프런트엔드 개발자</option>
+                    <option value="backend" selected>백엔드 개발자</option>
+                    <option value="engineer">시스템 엔지니어</option>
+                </select>
+                <!-- select ==> 단일 선택
+                다중선택하려면 multiple 속성을 준다. 
+                -->
+                <br />
+                사용 가능 언어
+                <select name="lang" multiple size="6">
+                    <option value="Java">Java</option>
+                    <option value="C">C</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                </select>
+                <br />
+                자기소개:
+                <textarea name="intro" rows="7" cols="50" placeholder="100자 이내로 작성하세요"></textarea>
+                <br />
+                히든필드:
+                <input type="hidden" name="secret" value="TopSecret" /><br />
+                <input type="submit" value="회원가입" /><!--전송버튼-->
+                <input type="reset" value="다시쓰기" /><!--리셋버튼-->
+                <input type="button" value="일반버튼" onclick="alert('반갑습니다~')" />
+                <hr />
+                <button>전송버튼</button>
+                <!-- 디폴트: submit버튼-->
+                <button type="reset">Reset버튼</button>
+                <button type="button">일반버튼</button>
+            </form>
+        </div>
+    </body>
+</html>

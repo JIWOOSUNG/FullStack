@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page32_mediaquery.html</title>
+        <style>
+            #wrap {
+                border: thick solid #000;
+                height: 90vh;
+                padding: 3em;
+                box-sizing: border-box;
+            }
+            /* 모바일 css */
+            @media screen and (min-width: 320px) {
+                #wrap {
+                    background-color: powderblue;
+                    width: 50%;
+                }
+            }
+            /* 태블릿 css */
+            @media screen and (min-width: 760px) {
+                #wrap {
+                    background-color: chocolate;
+                    width: 70%;
+                }
+            }
+            /* PC css */
+            @media screen and (min-width: 1024px) {
+                #wrap {
+                    background-color: lavender;
+                    width: 90%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <h1>미디어 쿼리</h1>
+        </div>
+    </body>
+</html>
+<!-- page32_mediaquery.html -->

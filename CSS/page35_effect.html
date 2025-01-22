@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                margin: 1em;
+                background-color: aquamarine;
+            }
+            #dv1 {
+                background-color: blueviolet;
+                color: #fff;
+            }
+            #dv1:hover {
+                display: none;
+                /* 해당 영역이 사라짐
+                none/block
+                */
+            }
+            #dv2 {
+                background-color: orangered;
+            }
+            #dv2:hover {
+                visibility: hidden;
+                /* 영역은 그대로 있고 다만 감쳐져서 안보임 */
+                /* hidden/visible */
+            }
+            #dv3:hover {
+                opacity: 0;
+                /* 영역 그대로 있음
+                 0(투명)  ~ 1(불투명)
+                 */
+            }
+        </style>
+    </head>
+    <body>
+        <div id="dv1">display:none</div>
+        <div id="dv2">visibility:hidden</div>
+        <div id="dv3">opacity:0</div>
+    </body>
+</html>
+<!-- page35_effect.html -->

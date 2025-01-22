@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page09_selector</title>
+        <style>
+            /* 하이퍼 링크 스타일 */
+            /* 처음 링크시 : 방문전 */
+            a:link {
+                text-decoration: none;
+                color: red;
+            }
+            /* 링크 : 방문후 */
+            a:visited {
+                color: green;
+            }
+            /* 링크 : 마우스클릭시 */
+            a:active {
+                color: purple;
+                font-size: 150%;
+            }
+            /* 링크 : 마우스 오버시 */
+            a:hover {
+                background-color: sandybrown;
+                font-size: 1.3em;
+            }
+            /* input요소중 비활성화된 요소를 선택해서
+            background를 silver로 주세요
+            글자색은 tomato색
+             */
+            input:disabled {
+                background-color: silver;
+                color: tomato;
+            }
+            /* input에 입력 포커스가 왔을 때 배경색 주기 */
+            input:focus {
+                background-color: lawngreen;
+            }
+
+            /* button에 마우스오버시 배경색과 글자색
+             알아서 주세요 */
+            button:hover {
+                padding: 15px;
+                background-color: cornflowerblue;
+                color: yellow;
+                font-weight: bold;
+                border: none;
+            }
+            /* 클래스가 google 인 요소를 선택해서
+            배경색을 주세요
+            */
+            h1.google {
+                background-color: olivedrab;
+                color: blue;
+            }
+
+            /* 클래스 google이 아닌 요소를 선택해서            
+            배경색: orange
+            :not(선택자) ==> 선택자가 아닌 요소 선택
+
+            */
+            a:not(.google) {
+                border: 2px dashed darkcyan;
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="google">상태 선택자/가상 클래스 선택자</h1>
+        <p>특정한 가상 액션 상황을 가정한 선택자</p>
+        <h2>하이퍼링크 스타일</h2>
+
+        <a href="http://www.naver.com">네이버</a><br /><br />
+        <a href="http://www.google.com" class="google">구글</a><br /><br />
+        <a href="http://www.daum.net">다음</a><br /><br />
+        <a href="http://www.nate.com">네이트</a><br /><br />
+
+        <hr color="red" />
+        user : <input type="text" value="apple" disabled /><br />
+        password: <input type="password" name="pw" id="pw" /><br />
+        <button>로그인</button>
+    </body>
+</html>

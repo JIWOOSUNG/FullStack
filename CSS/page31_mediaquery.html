@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page31_mediaquery.html</title>
+        <style>
+            #main{
+                width: 200px;
+                height: 200px;
+                background-color: goldenrod;
+            }
+            /* 뷰포트 폭이 421px 이상~ 1024px 이하일때 #main의 배경색을 green으로 변경 */
+            @media only screen and (min-width: 421px) and (max-width:1024px){
+                #main{
+                    background-color: green;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main"></div>
+        <hr />
+        <p>
+            <h3>미디어 쿼리 (media query)</h3>
+            @media [only|not] 미디어유형 [and 조건] * [and 조건]<br>
+        </p>
+    </body>
+</html>
+<!-- page31_mediaquery.html -->

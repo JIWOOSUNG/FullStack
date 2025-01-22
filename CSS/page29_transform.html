@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page29_transform</title>
+        <style>
+            body {
+                margin: 2em;
+                padding: 2em;
+            }
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: darkcyan;
+                margin: 1em;
+                text-align: center;
+                color: #fff;
+            }
+            .box {
+                background-color: palegreen;
+                color: green;
+                transition: transform 0.5 ease;
+            }
+            .box:hover {
+                transform: rotate(45deg) scale(1.2);
+            }
+            .box1 {
+                transition: transform 1s linear 0.3s;
+            }
+            .box1:hover {
+                transform: translate(100px, 50px); /*x, y*/
+            }
+            .box2,
+            .box3,
+            .box4 {
+                background-color: violet;
+                transition: transform 1s linear;
+            }
+            .box2:hover {
+                transform: scale(1.5, 0.3);
+            }
+            .box3:hover {
+                transform: rotate(-30deg);
+            }
+            .box4:hover {
+                transform: skew(30deg, 50deg);
+                /* x:30도, y:50도 각도만큼 비들어 왜곡 */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 
+/*  ######################################################################
+    * transform 테크닉
+    rotate(회전 효과) : rotateX(), rotateY(), rotate(x, y)
+    scale(확대/축소 효과) : scaleX(), scaleY(), scale(x, y)
+    translate(이동효과) : translateX(), translateY(), translate(x, y)
+    skew(비틀기) 효과 : skewX(), skewY()
+    ######################################################################*/
+-->
+        <div class="box">rotate</div>
+        <div class="box1">translate</div>
+        <div class="box2">scale</div>
+        <div class="box3">rotate(-30deg)</div>
+        <div class="box4">skew</div>
+    </body>
+</html>
+<!-- page29_transform.html -->

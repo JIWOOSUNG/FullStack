@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page17_semantic</title>
+        <style>
+            div {
+                width: 90%;
+                height: 95vh;
+                margin: 0 auto;
+                border: 3px solid black;
+            }
+            header {
+                background-color: #dddddd;
+                height: 10vh;
+            }
+            nav {
+                background-color: lightblue;
+                height: 40px;
+            }
+            main {
+                background-color: bisque;
+                height: 70vh;
+                width: 70%;
+                float: left;
+            }
+            aside {
+                background-color: chartreuse;
+                height: 70vh;
+                width: 30%;
+                float: right;
+            }
+            footer {
+                clear: both; /*float 을 해제*/
+                width: 100%;
+                background-color: #ddd;
+                height: 10vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>Header 영역</header>
+            <nav>Navigation Menu</nav>
+            <main>
+                <section>
+                    <article>주제1</article>
+                    <article>주제2</article>
+                    <article>주제3</article>
+                    <article>주제4</article>
+                </section>
+            </main>
+            <aside>사이드 메뉴</aside>
+            <footer>Footer 영역</footer>
+        </div>
+    </body>
+</html>
+<!-- page17_semantic.html -->

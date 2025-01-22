@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page01_css.html</title>
+        <style>
+            /* css 주석
+              선택자 {
+                속성명:값;
+                속성명:값;
+              }
+            */
+            /* 전체선택자: * (=>모든것의 의미)  */
+            * {
+                color: blue; /*글자색*/
+            }
+            body {
+                background-color: antiquewhite; /*배경색*/
+                padding: 30px; /*안쪽여백(상하 좌우: 30px)*/
+                font-family: Verdana, Geneva, Tahoma, sans-serif; /*서체*/
+                font-size: 30px; /*글자 크기*/
+            }
+            /*
+            b태그 선택해서
+            글자색: tomato색
+            글자크기: 35px
+            배경색 : 알아서
+            */
+            b {
+                color: tomato;
+                font-size: 35px;
+                background-color: aquamarine;
+                padding: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        안녕하세요 <br />
+        <b>CSS 3.0</b>을 배워봅시다
+        <p>
+            HTML의 보완적 요소가 CSS입니다
+            <b>Cascading Style Sheet</b>
+        </p>
+        <!-- 
+        [1] style 태그로 html 문서 내부에 정의하는 방법
+        [2] 외부파일(xxx.css)에 정의한 뒤, html문서에서 참조하는 방법
+            => <link> 태그를 활용
+            => @import 를 활용
+        [3] html tag 안에 inline style로 정의하는 방법
+        -->
+    </body>
+</html>
+<!-- page01_css.html -->

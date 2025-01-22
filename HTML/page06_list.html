@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page06_list</title>
+    </head>
+    <body>
+        <h1>ol 태그 - 순서있는 목록 (ordered list)</h1>
+        <!-- ol태그 속성
+         [1] type : 1 (default), A, a, I, i
+         [2] start : 시작값을 지정(숫자)
+         -->
+        <ol type="i" start="3">
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Linked In</li>
+        </ol>
+
+        <hr color="red" />
+        <h1>ul 태그 - 순서없는 목록 (unordered list)</h1>
+        <!-- ul 태그 속성
+         [1] type : disc (default), circle, square -->
+        <ul type="square">
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Linked In</li>
+        </ul>
+        <hr color="blue" />
+        <h1>중첩 리스트 (목록 안에 목록)</h1>
+        <ul>
+            <li>Coffee</li>
+            <li>
+                Tea
+                <ul type="square">
+                    <li>Black Tea</li>
+                    <li>Green Tea</li>
+                </ul>
+            </li>
+            <li>Milk</li>
+        </ul>
+        <hr color="green" />
+        <h1>상품 구성</h1>
+        <dl>
+            <dt>선물용 3kg</dt>
+            <dd>소과 13 ~16과</dd>
+            <dd>중과 10 ~12과</dd>
+
+            <dt>선물용 5kg</dt>
+            <dd>중과 15~19과</dd>
+        </dl>
+    </body>
+</html>

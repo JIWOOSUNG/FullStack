@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page11_audio</title>
+    </head>
+    <body>
+        <h1>오디오 재생 - audio태그</h1>
+        <audio src="assets/I_Have_A_Dream.mp3" controls="controls"></audio>
+        <!-- 
+        mp3 (크롬, 사파리, 엣지) 
+        ogg (크롬, 오페라, 파이어폭스) 
+        wav (크롬, 오페라, 파이어폭스, 사파리)
+        -->
+        <audio controls loop="2" autoplay preload="metadata">
+            <source src="assets/Ob-La-Di Ob-La-Da.ogg" type="audio/ogg" />
+            <source src="assets/Ob-La-Di Ob-La-Da.mp3" type="audio/mp3" />
+            <source src="assets/Ob-La-Di Ob-La-Da.wav" type="audio/wav" />
+            오디오가 지원되지 않는 브라우저입니다
+        </audio>
+    </body>
+</html>
+
+<!-- page11_audio.html -->

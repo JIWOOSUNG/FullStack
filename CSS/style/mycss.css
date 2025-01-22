@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* mycss.css */
+
+body {
+    color: rgb(87, 120, 222);
+    /* #ff0000 */
+    font-size: 1.5em;
+    /*em: 상대적 단위
+    1 em : 16px
+    2 em : 32px
+    */
+}
+/*
+div태그 선택해서
+서체: sans-serif 궁서체
+글자색: 알아서
+바깥 여백: 1em
+배경색: 알아서
+*/
+div {
+    font-family: 궁서체, sans-serif;
+    color: #1f9;
+    background-color: rgb(155, 25, 200);
+    margin: 1em;
+}
+a:link {
+    text-decoration: none;
+}
