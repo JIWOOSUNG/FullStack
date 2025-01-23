@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page08_quiz</title>
+    <style>
+        /* input중 readonly 속성을 가진 요소에
+        배경색을 silver색으로 설정하세요. */
+    input:read-only{
+        background-color: silver;
+    }
+    </style>
+</head>
+<body>
+    <h1>성적 구하기</h1>
+    <form name="frm">
+        <label for="kor">국 어:</label>
+        <input name="kor" id="kor" type="text"><br>
+
+        <label for="math">수 학:</label>
+        <input type="text" name="math" id="math"><br>
+
+        <label for="eng">영 어:</label>
+        <input type="text" name="eng" id="eng"><br>
+
+        <label for="sum">합 계:</label>
+        <input type="text" name="sum" id="sum" readonly><br>
+
+        <label for="avg">평 균:</label>
+        <input type="text" name="avg" id="avg" readonly><br>
+        <br>
+        <input type="button" value="성적 내기" onclick="getGrade()">
+        <input type="reset" value="다시 쓰기">
+    </form>
+
+    <script>
+        const getGrade = function(){
+            //1. 사용자가 입력한 국어, 영어, 수학 점수 얻어오기
+            //form이름 .input이름.value로 값을 얻어오자
+            let kor = frm.kor.value; //string
+            let math = frm.math.value;
+            let eng = frm.eng.value;
+
+            //2. 유효성 체크 : 사용자가 값을 잘 넣은지 확인하는 작업
+            if(!kor){
+                alert("국어 점수를 입력하세요.");
+                frm.kor.focus(); // 입력 포커스 주기
+                return; //return 수행시 아래부분 수행하지않음
+            }
+            else if(!math){
+                alert("수학 점수를 입력하세요.");
+                frm.math.focus(); // 입력 포커스 주기
+                return; //return 수행시 아래부분 수행하지않음
+            }
+            else if(!eng){
+                alert("영어 점수를 입력하세요.");
+                frm.eng.focus(); // 입력 포커스 주기
+                return; //return 수행시 아래부분 수행하지않음
+            }
+            
+            // string + string + string  ==> 문자열 결합을 수행
+            //ex) 88 99 11 ==> 889911
+            //내장함수 : parseInt(변수) => 문자열을 정수로 변환하는 기능을 가진다
+            //          parseFloat(변수) ==> 실수로 변환
+
+            let sum = parseInt(kor) + parseInt(math) + parseInt(eng);
+            let avg = sum / 3
+            frm.sum.value = sum;
+            frm.avg.value = avg.toFixed(2);
+ 
+        }
+    </script>
+</body>
+</html>
