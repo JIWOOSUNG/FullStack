@@ -1,0 +1,57 @@
+<body>
+    <h1>for loop</h1>
+    <!-- 1. table 태그 이용하여 구구단 전체 테이블 구성 1~9단 -->
+    <h2>1번 문제: 구구단</h2>
+    <script>
+        let mpt = '<table style="border-collapse: collapse;">';
+        for (i = 0; i < 10; i++) {
+            mpt += '<tr>';
+            for (j = 1; j < 10; j++) {
+                if (i == 0) {
+                    mpt += `<td style="border: 1px solid black"> ${j}단  </td>`;
+                } else {
+                    mpt += `<td style="border: 1px solid black"> ${j}×${i}=${i * j} </td>`;
+                }
+            }
+            mpt += '</tr>';
+        }
+        mpt += '</table>';
+        document.write(mpt);
+    </script>
+    <!-- 2. prompt 행의 수, 열의 수, border 두께, 배경색을 입력받아 해당하는 행열 형태의 테이블 출력 값은 딸기 -->
+    <h2>2번 문제: 기딸</h2>
+    <script>
+        let rows = prompt('행을 입력하시오.');
+        let cols = prompt('열을 입력하시오.');
+        let border = prompt('두께를 입력하시오.');
+        let bcolor = prompt('배경색을 입력하시오.\n1 : 적색\n2 : 청색\n3 : 황색\n4 : 녹색');
+
+        switch (parseInt(bcolor, 10)) {
+            case 1:
+                bcolor = 'red';
+                break;
+            case 2:
+                bcolor = 'blue';
+                break;
+            case 3:
+                bcolor = 'yellow';
+                break;
+            case 4:
+                bcolor = 'green';
+                break;
+            default:
+                bcolor = 'white';
+        }
+        let table2 = `<table style="background-color: ${bcolor}; border: ${border}px solid black">`;
+        for (i = 0; i < rows; i++) {
+            table2 += '<tr>';
+
+            for (j = 0; j < cols; j++) {
+                table2 += '<td>딸기</td>';
+            }
+            table2 += '</tr>';
+        }
+        table2 += '</table>';
+        document.write(table2);
+    </script>
+</body>

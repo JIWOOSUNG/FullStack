@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page13_switch</title>
+    <style>
+        #box{
+            background-color: azure;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <div id="box">
+            1. '어느 사이트를 자주 가나요?' 입력창을 띄우세요
+            <br>
+            2. 입력값이 네이버 => 해당 사이트로 이동 <br>
+                        구글   => 해당 사이트로 이동 <br>
+                        다음   => 해당 사이트로 이동 <br>
+
+            window.location.href = 'url 주소' => 해당 사이트로 이동가능
+        </div>
+    </p>
+    <script>
+        let url = prompt('어느 사이트를 자주 가나요?');
+        // let box = document.getElementById('box');
+        let box = document.qurySelector('#box');
+        // alert(box);
+        box.style.color = 'tomato'
+        box.style.backgroundColor='beige';
+        //html요소.style.속성명 = '값'
+        //'-' => 자바스크립트에서는 빼기 연산자
+        //backgroun-color(kebab 표기법) ==> backgroundColor (camel표기법 사용 : 낙타 등)
+        let str = null, cr = 'white';
+        
+
+        switch(url){
+            case '네이버' : {
+                str= 'naver.com'
+                // location.href = 'https://www.naver.com/';
+                cr = 'green';
+                break;
+            }
+            case '구글' : {
+                str= 'google.com'
+                // location.href = 'https://www.google.com/?hl=ko';
+                cr = 'puple';
+                break;
+            }
+            case '다음' : {
+                str= 'daum.net'
+                cr = 'pink';
+                // location.href = 'https://www.daum.net/';
+                break;
+            }
+            default : {
+                // document.write('그런 사이트는 없습니다.');
+                str = 'w3schools.com'
+            }
+            // window.location.href = 'https://www.' + str;
+            box.style.backgroundColor='cr';
+        }
+    </script>
+</body>
+</html>
