@@ -1,74 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-    <link rel="stylesheet" href="dist/common.css" type="text/css" />
-    <link rel="stylesheet" href="dist/layout.css" type="text/css" />
-</head>
-<body>
-    <div id="wrap">
-        <!--header---------------------------------------------- -->
-        <header class="header">
-            <section class="top_area">
-                <div class="logo_wrap">
-                    <h1>Hello World</h1>
-                    <a href="#" class="top_title"></a>
-                    <button class="menu btn menu_open" href="#menu_list"></button>
-                </div>
-                <!-- ----- -->
-                <div class="link_wrap">
-                    <div>
-                        <button>로그인</button>
-                        <button>회원가입</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hello World</title>
+        <link rel="stylesheet" href="dist/common.css" type="text/css" />
+        <link rel="stylesheet" href="dist/layout.css" type="text/css" />
+    </head>
+    <body>
+        <div id="wrap">
+            <!-- header ----------------------------- -->
+            <header class="header">
+                <section class="top_area">
+                    <div class="logo_wrap">
+                        <h1>Hello World</h1>
+                        <a href="#" class="top_title"></a>
+                        <button class="menu btn menu_open" href="#menu_list"></button>
+                    </div>
+                    <!-- ----- -->
+                    <div class="link_wrap">
+                        <div>
+                            <button>로그인</button>
+                            <button>회원가입</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="top_menu" id="menu_list">
+                    <!-- 메뉴 네비게이션 -->
+                    <nav class="nav">
+                        <ul>
+                            <li class="sm"><a href="#"></a><span>공지사항</span></li>
+                            <li class="sm"><a href="#"></a><span>자유게시판</span></li>
+                            <li class="sm"><a href="#"></a><span>갤러리</span></li>
+                        </ul>
+                    </nav>
+                    <!-- 검색 폼 -->
+                    <nav class="nav">
+                        <form action="findResult.jsp" id="searchFrm">
+                            <div class="search">
+                                <div><input type="search" name="keyword" id="find" /></div>
+                                <button class="btn">검 색</button>
+                            </div>
+                        </form>
+                    </nav>
+                </section>
+            </header>
+            <!-- main#content-wrap------------------- -->
+            <main id="content-wrap">
+                <!-- .main_left (게시판) ----------- -->
+                <div class="main_left">
+                    <div class="data_list">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
                     </div>
                 </div>
-            </section>
 
-            <section class="top_menu" id="menu_list">
-                <!-- 메뉴 네비게이션 -->
-                 <nav class="nav">
-                    <ul>
-                        <li class="sm"><a href="#"><span>로그인</span></a>
-                        </li>
-                        <li class="sm"><a href="#"></a><span>회원가입</span>
-                        </li>
-                        <li class="sm"><a href="#"></a><span>공지사항</span>
-                        </li>
-                        <li class="sm"><a href="#"></a><span>자유게시판</span>
-                        </li>
-                        <li class="sm"><a href="#"></a><span>갤러리</span>
-                        </li>
-                    </ul>
-                 </nav>
-                <!-- 검색 폼 -->
-                 <nav class="nav">
-                    <form action="findResult.jsp" id="searchFrm">
-                        <div class="search">
-                            <div><input type="search" name="keyword" id="find"></div>
-                            <button class="btn">검 색</button>
+                <!-- .main_right (갤러리) ---------- -->
+                <div class="main_right">
+                    <div class="data_list">
+                        <div class="list-body-grid">
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=1" alt="random1" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc"></div>
+                            </div>
+                            <!-- .gal end -->
+
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=2" alt="random2" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc"></div>
+                            </div>
+                            <!-- .gal end -->
+
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=3" alt="random3" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc"></div>
+                            </div>
+                            <!-- .gal end -->
+
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=4" alt="random4" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc"></div>
+                            </div>
+                            <!-- .gal end -->
+
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=5" alt="random5" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc"></div>
+                            </div>
+                            <!-- .gal end -->
+
+                            <div class="gal">
+                                <!--이미지  -->
+                                <div class="gal-img">
+                                    <img src="https://picsum.photos/300?random=6" alt="random6" />
+                                </div>
+                                <!-- 상세 설명 -->
+                                <div class="gal-desc"></div>
+                            </div>
+                            <!-- .gal end -->
                         </div>
-
-                    </form>
-                 </nav>
-            </section>
-        </header>
-        <!-- main#content-wrap----------------------------- -->
-        <main id="content-wrap">
-            <!-- .main_left (게시판) -->
-            <div class="main_left"></div>
-
-            <!-- .main_right (갤러리) -->
-            <div class="main_right"></div>
-
-        </main>
-        <!-- footer--------------------------- -->
-        <footer class="footer">
-            <p class="copy">
-                Copyright &copy; 2025
-            </p>
-        </footer>
-    </div>
-</body>
+                    </div>
+                </div>
+            </main>
+            <!-- footer--------------------------- -->
+            <footer class="footer">
+                <p class="copy">Copyright &copy; 2025</p>
+            </footer>
+        </div>
+    </body>
 </html>

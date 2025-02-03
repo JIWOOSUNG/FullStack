@@ -1,7 +1,8 @@
-/* : root => 문서의 최상위 요소를 나타내는 특수 선택자 
-여기에서 정의한 변수는 문서 전체에서 접근 가능*/
-:root{
-    --main-bg-color:#607d8b;
+/* common.css */
+/* :root => 문서의 최상위 요소를 나타내는 특수 선택자
+여기에서 정의한 변수는 문서 전체에서 접근 가능 */
+:root {
+    --main-bg-color: #607d8b;
     --sub-bg-color: #6f8c9b;
     --main-font-wh: #fff;
     --main-bg-m-grey: #ddd;
@@ -13,27 +14,23 @@
     --denger-color: #f44336;
 }
 /* 선택자: var(--main-bg-color) */
-
-*{
+* {
     margin: 0;
     padding: 0;
     border: 0;
-
 }
-html, body{
-    margin:0 auto;
-    min-width:100%;
+html,
+body {
+    margin: 0 auto;
+    min-width: 100%;
     background-color: var(--main-bg-m-grey);
 }
-
-:focus{
+:focus {
     outline: 0;
 }
-
-div{
+div {
     box-sizing: border-box;
 }
-
 a {
     color: #333;
     text-decoration: none;

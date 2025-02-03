@@ -14,28 +14,25 @@
     background-color: var(--main-bg-color);
     box-shadow: 2px 2px 6px rgb(0, 0, 0/ 10%);
 }
-
 /* .header>.top_area */
-.top_area{
+.top_area {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem;
-    box-shadow:2px 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
-
-.logo_wrap{
+.logo_wrap {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
 }
-
 .logo_wrap h1 {
     color: var(--main-font-wh);
     margin-right: 0.5rem;
 }
-.top_title{
+.top_title {
     background-image: url('../images/brand-l.png');
     width: 2.2rem;
     height: 2.2rem;
@@ -44,20 +41,18 @@
     display: none;
 }
 
-/* #menu_list----------- */
-#menu_list{
+/* #menu_list------------ */
+#menu_list {
     display: flex;
-    flex-flow: eow nowrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
     padding: 0.8rem;
     color: var(--main-font-wh);
 }
-
-#menu_list .nav{
+#menu_list .nav {
     width: 50%;
 }
-
-#menu_list .nav ul{
+#menu_list .nav ul {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
@@ -66,36 +61,30 @@
     padding: 0.8rem 0;
     width: 100%;
 }
-
-/* header 검색 폼-------- */
-div.search{
+/* header 검색 폼 ---- */
+div.search {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
-
 }
-
-div.search div{
+div.search div {
     flex: 1 auto;
 }
-
-#find{
+#find {
     display: block;
     width: 100%;
-    padding:0.8rem;
+    padding: 0.8rem;
 }
 .nav ul li:hover,
-.search:hover{
+.search:hover {
     background-color: var(--sub-bg-color);
 }
-
-#searchFrm button{
+#searchFrm button {
     width: 20%;
     min-width: 70px;
     max-width: 150px;
 }
-
 /* main#content-wrap ----------- */
 main#content-wrap {
     order: 2;
@@ -124,9 +113,35 @@ main#content-wrap {
     display: flex;
     flex-flow: column nowrap;
 }
+.main_left .data_list {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+}
+.main_left .data_list .box {
+    border: 1px solid red;
+    flex: 1; /*균등하게*/
+    width: 100%;
+    padding: 1rem;
+}
+
 /* .main_right [gallery]------ */
 .main_right {
     /* border: 2px solid blue; */
     width: 50%;
     flex-flow: column nowrap;
+}
+.main_right .list-body-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.main_right .list-body-grid .gal {
+    width: 48.5%;
+}
+.main_right .list-body-grid .gal .gal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
