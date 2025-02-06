@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page01.html</title>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Ajax</h1>
+        <button>User정보 가져오기(XMLHttpRequest)</button>
+        <button>User정보 가져오기(fecth api사용)</button>
+        <hr />
+        <div id="result"></div>
+
+        <script>
+            //XMLHttpRequest 객체를 이용해 ajax 를 해보자
+            const xhr = new XMLHttpRequest(); //ActiveXObject
+            const buttons = document.querySelectorAll('button');
+            const result = document.querySelector('#result');
+
+            buttons[0].onclick = function () {
+                //open() => 요청을 보낼 준비를 한다
+                xhr.open('get', 'User.json', true); //true(디폴트) => asynchronous
+                //send(body) => 요청을 보낸다
+                xhr.send(null); //get방식=> null을 전달, post방식 => 파라미터데이터 전달
+                xhr.onload = function () {
+                    //응답이 올경우 실행되는 함수
+                    //응답 데이터 추출
+                    let res = xhr.response;
+                    //alert(typeof res);//string타입
+                    //[1] string을 json객체로 변환: JSON.parse(문자열)
+                    //[2] json객체를 string으로 변환: JSON.stringify(객체)
+                    let obj = JSON.parse(res);
+                    //alert(obj.data.first_name);
+                    let user = obj.data;
+                    renderUI(user);
+                };
+            }; //----------------
+
+            buttons[1].onclick = function () {
+                const url = 'http://localhost:5500/User.json';
+                fetch(url)
+                    .then(function (response) {
+                        //해당 요청이 성공적으로 처리됐을 때 수행
+                        //alert(response.ok);
+                        if (!response.ok) {
+                            throw new Error('요청이 잘못됐거나 네트워크 문제가 있어요');
+                            //에러를 발생시킨다
+                        }
+                        return response.json(); //JSON.parse(응답데이터)와 동일
+                    })
+                    .then(function (res) {
+                        //alert(JSON.stringify(res));
+                        renderUI(res.data);
+                    })
+                    .catch(function (err) {
+                        //해당 요청 실패시 수행
+                        alert('Error발생: ' + err);
+                    });
+            }; //----------------
+
+            const renderUI = (user) => {
+                result.innerHTML = `
+                    <h2>User Info</h2>
+                    <img src="${user.avatar}" alt="${user.first_name}">
+                    <h3>ID: ${user.id}</h3>
+                    <h3>Name: ${user.first_name} ${user.last_name}</h3>
+                    <h3>Email: ${user.email}</h3>
+                    `;
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>axios</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h1>Aios 라이브러리 사용</h1>
+        <button id="b1" onclick="getUser()">User 데이터 받기</button>
+        <button id="b2" onclick="getCurrentLocation()">현재 내 위치 알아내기</button>
+        <hr />
+        <div id="result"></div>
+        <script>
+            function getCurrentLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            const lat = position.coords.latitude;
+                            const long = position.coords.longitude;
+                            if (lat && long) {
+                                let result = document.querySelector('#result');
+                                result.innerHTML = `<h2>Latitude: ${lat}, Longitude: ${long}</h2>`;
+                            } else {
+                                alert('위도 경도 데이터 받기 실패');
+                            }
+                        },
+                        (error) => {
+                            alert('Geolocation Error: ' + error.message);
+                        }
+                    );
+                } else {
+                    alert('Geolocation이 지원되지 않는 브라우저에요');
+                }
+            } //----------------------------
+
+            function getUser() {
+                let url = 'User.json';
+                axios
+                    .get(url)
+                    .then((response) => {
+                        //alert(JSON.stringify(response));
+                        let user = response.data.data;
+                        document.getElementById('result').innerHTML = `<h2>${user.first_name} ${user.last_name}</h2>`;
+                    })
+                    .catch((err) => {
+                        alert(err);
+                    });
+            }
+        </script>
+    </body>
+</html>
