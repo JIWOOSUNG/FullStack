@@ -8,11 +8,17 @@ import MyComp2 from './components/MyComp2';
 import MyComp1 from './components/MyComp1';
 import UseEffectHook from './components/UseEffectHook';
 import PageNotFound from './components/PageNotFound';
+import TimerClock from './components/TimerClock';
+import UserDetail from './components/UserDetail';
+import Boards from './components/Boards';
+import UseRefHook from './components/UseRefHook';
+import UseNavigateHook from './components/UseNavigate';
+import TodoApp from './components/todo/TodoApp';
 
 function App() {
     return (
         <div className="container py-5">
-            <BrowserRouter>
+            <BrowserRouter future={{ v7_relativeSplatPath: false }}>
                 {/* BrowserRouter로 앱 전체를 감싸야 라우팅 기능을 사용할 수 있다 */}
                 <Container>
                     <Row>
@@ -34,7 +40,13 @@ function App() {
                                 <Route path="/comp1" element={<MyComp1 />} />
                                 <Route path="/comp2" element={<MyComp2 />} />
                                 <Route path="/hook1" element={<UseEffectHook />} />
-                                <Route path="*" element={<PageNotFound />} />
+                                <Route path="/hook2" element={<TimerClock />} />
+                                <Route path="/users/:id" element={<UserDetail />} />
+                                <Route path="/boards" element={<Boards />} />
+                                <Route path="/hook3" element={<UseRefHook />} />
+                                <Route path="/hook4" element={<UseNavigateHook />} />
+                                <Route path="/todo" element={<TodoApp />} />
+                                <Route path="/*" element={<PageNotFound />} />
                             </Routes>
                         </Col>
                     </Row>

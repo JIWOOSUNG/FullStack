@@ -15,6 +15,27 @@ export default function Side() {
                 <ListGroup.Item as={Link} to="/hook1">
                     useEffect 훅
                 </ListGroup.Item>
+                <ListGroup.Item as={Link} to="/hook2">
+                    useEffect 훅-Clock
+                </ListGroup.Item>
+                <ListGroup.Item as={Link} to="/hook3">
+                    useRef 훅
+                </ListGroup.Item>
+                <ListGroup.Item as={Link} to="/hook4">
+                    useNavigate 훅
+                </ListGroup.Item>
+                <ListGroup.Item as={Link} to="/hook5">
+                    useMemo 훅
+                </ListGroup.Item>
+                <ListGroup.Item as={Link} to="/hook6">
+                    useCallback 훅
+                </ListGroup.Item>
+                <ListGroup.Item as={Link} to="/ajax1">
+                    Rest API 1
+                </ListGroup.Item>
+                <ListGroup.Item as={Link} to="/ajax2">
+                    Rest API 2
+                </ListGroup.Item>
             </ListGroup>
         </Stack>
     );

@@ -16,6 +16,18 @@ export default function Header() {
                 <li>
                     <Link to="/comp2">MyComp2</Link>
                 </li>
+                <li>
+                    <Link to="/users/100">User Detail</Link>
+                </li>
+                <li>
+                    <Link to="/boards?bid=100&page=2&size=10">자유게시판</Link>
+                </li>
+                <li>
+                    <Link to="/todo">ToDo</Link>
+                </li>
+                <li>
+                    <Link to="/post">Post & Reply</Link>
+                </li>
             </ul>
         </div>
     );
