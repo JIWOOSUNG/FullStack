@@ -24,13 +24,17 @@ export default function Side() {
                 <ListGroup.Item as={Link} to="/hook4">
                     useNavigate 훅
                 </ListGroup.Item>
+
                 <ListGroup.Item as={Link} to="/hook5">
                     useMemo 훅
                 </ListGroup.Item>
                 <ListGroup.Item as={Link} to="/hook6">
                     useCallback 훅
                 </ListGroup.Item>
-                <ListGroup.Item as={Link} to="/ajax1">
+                <ListGroup.Item as={Link} to="/hook7">
+                    useContext 훅
+                </ListGroup.Item>
+                <ListGroup.Item as={Link} to="/ajax1/3">
                     Rest API 1
                 </ListGroup.Item>
                 <ListGroup.Item as={Link} to="/ajax2">

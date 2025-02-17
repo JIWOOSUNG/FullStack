@@ -14,6 +14,12 @@ import Boards from './components/Boards';
 import UseRefHook from './components/UseRefHook';
 import UseNavigateHook from './components/UseNavigate';
 import TodoApp from './components/todo/TodoApp';
+// import ContextApp from './components/context-api/App';
+// import ContextApp from './components/context-api/App2';
+import ContextApp from './components/context-api/App3';
+import UseMemoHook from './components/UseMemoHook';
+import UseCallbackHook from './components/UseCallbackHook';
+import UserOne from './components/user/UserOne';
 
 function App() {
     return (
@@ -46,6 +52,10 @@ function App() {
                                 <Route path="/hook3" element={<UseRefHook />} />
                                 <Route path="/hook4" element={<UseNavigateHook />} />
                                 <Route path="/todo" element={<TodoApp />} />
+                                <Route path="/hook7" element={<ContextApp />} />
+                                <Route path="/hook5" element={<UseMemoHook />} />
+                                <Route path="/hook6" element={<UseCallbackHook />} />
+                                <Route path="/ajax1/:id" element={<UserOne />} />
                                 <Route path="/*" element={<PageNotFound />} />
                             </Routes>
                         </Col>
