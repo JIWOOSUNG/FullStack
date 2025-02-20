@@ -1,21 +1,35 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Header from './components/Header';
 import Side from './components/Side';
 import Home from './components/Home';
 import PageNotFound from './components/PageNotFound';
 import SignUp from './components/member/SignUp';
 import LoginModal from './components/member/LoginModal';
+import MyPage from './components/member/MyPage';
+import { AuthContext } from './components/member/AuthContext';
 function App() {
     // 로그인 모달을 보여줄지 여부값을 갖는 state
     const [showLogin, setShowLogin] = useState(false);
+
+    const { loginAuthUser } = useContext(AuthContext);
 
     const onShowLoginChange = (bool) => {
         //alert(bool);
         setShowLogin(bool);
     };
+    //브라우저 새로고침시 로그인 상태정보 풀리는 문제 해결위해 useEffect훅을 사용하자
+    useEffect(() => {
+        //세션 스토리지에 저장한 user가 있는지 확인. 있다면 로그인했다는 의미. user정보를 꺼내서 활용하자
+
+        const tmpUser = JSON.parse(sessionStorage.getItem('user'));
+
+        if (tmpUser) console.log(tmpUser.name, tmpUser.email);
+
+        if (tmpUser) loginAuthUser(tmpUser);
+    }, []);
 
     return (
         <div className="container py-5">
@@ -35,6 +49,7 @@ function App() {
                             <Routes>
                                 <Route path="/" element={<Home />} />
                                 <Route path="/signup" element={<SignUp />} />
+                                <Route path="/mypage" element={<MyPage />} />
                                 <Route path="/*" element={<PageNotFound />} />
                             </Routes>
                         </Col>

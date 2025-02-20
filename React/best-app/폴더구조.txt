@@ -1,0 +1,20 @@
+src/
+│── components/
+│   ├── member/
+│   │   ├── LoginModal.jsx  // 로그인 모달 컴포넌트
+│
+│── context/
+│   ├── AuthContext.jsx  // 인증 관련 전역 상태 관리
+│
+│── utils/
+│   ├── authUtils.js  // 인증 관련 유틸 함수 (토큰 관리, 검증 등)
+│   ├── storageUtil.js  // localStorage, sessionStorage 관리 유틸
+│
+│── api/
+│   ├── axiosInstance.js  // axios 기본 설정 (토큰 포함 등)
+│
+│── pages/
+│   ├── LoginPage.jsx  // 로그인 페이지 (LoginModal을 포함)
+│
+│── App.js
+│── index.js
