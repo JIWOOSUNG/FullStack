@@ -10,34 +10,27 @@ export default function Side({ onShowLogin }) {
 
     const navigate = useNavigate();
 
-    const handleLogout = async () => {
+    const handleLogout = () => {
         //로그아웃 처리
-        //1. 서버에 로그아웃 요청
-        try {
-            const url = `http://localhost:7777/api/auth/logout`;
-            await axiosInstance.post(url, { email: user.email });
-        } catch (error) {
-            alert('로그아웃 처리 중 에러: ' + error);
-        }
-
-        logoutUser(); //2. AuthContext 에서 제공하는 logoutUser를 호출하여 user 상태를 null로 초기화
-        //sessionStorage.removeItem('user'); //세션스토리지에 저장한 user정보 삭제
-        //3. 토큰 삭제
+        logoutUser(); //AuthContext 에서 제공하는 logoutUser를 호출하여 user 상태를 null로 초기화
+        sessionStorage.removeItem('user'); //세션스토리지에 저장한 user정보 삭제
+        //토큰 삭제
         sessionStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
 
-        navigate('/'); //5. ㅡ페이지 이동
+        navigate('/'); //페이지 이동
     };
 
     //회원인증이 필요한 경우는 axiosInstance를 사용
     //회원인증이 필요없는 경우는 axios를 사용
     const handleTest = async () => {
-        try {
-            const response = await axiosInstance.post('http://localhost:7777/api/auth/test');
-            alert(response.data.message);
-        } catch (err) {
-            console.error(err);
-        }
+    try{
+        const response = await axiosInstance.post('http://localhost:7777/api/auth/test');
+        alert(response.data.message)
+	}catch(err){
+		//alert(err.message);
+		navigate('/')
+	}
     };
 
     return (

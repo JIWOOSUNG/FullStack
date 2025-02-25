@@ -58,8 +58,8 @@ export default function LoginModal({ show, setShow }) {
                 alert(response.data.message + ` ${authUser.name}님 환영합니다`);
                 //////////////////////
                 loginAuthUser(authUser); //Context api를 통해 공급받은 loginAuthUser를 통해 전역 상태를 업데이트
-                //로그인한 회원정보를 sessionStorage에 저장하자
-                sessionStorage.setItem('user', JSON.stringify(authUser));
+                //로그인한 회원정보를 sessionStorage에 저장하자 ==>accessToken으로 대체
+                //sessionStorage.setItem('user', JSON.stringify(authUser));
                 //발급받은 토큰 저장하기
                 const { accessToken, refreshToken } = response.data;
                 sessionStorage.setItem('accessToken', accessToken); //15분 사용 가능 => 세션 스토리지에 저장

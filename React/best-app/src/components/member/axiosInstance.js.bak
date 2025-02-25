@@ -43,11 +43,7 @@ axiosInstance.interceptors.response.use(
     async (error) => {
         const status = error.response?.status;
         console.log('응답 인터셉터에서 받은 응답 상태코드(status): ', status);
-        if (status === 400) {
-            alert(error.response.data.message); //로그인을 하세요
-            window.location.href = '/';
-            return Promise.reject(error);
-        }
+		
 
         if (status === 401) {
             //인증받지 않은 사용자인 경우
