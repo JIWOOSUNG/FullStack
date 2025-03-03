@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="mb1" class="com.kbsw.spring_mybatis.basic_ioc.ex1.MessageBeanEn">
+        <property name="greeting">
+            <value>맛있는 점심 식사 하세요~</value>
+        </property>
+        <!-- mb1.setGreeting("맛있는 ...");        -->
+        <property name="num"  value="300"  />
+        <!--mb1.setNum(300);
+3
+        Date today=new Date();
+        mb1.setToday(today);
+        -->
+        <property name="today" ref="todayRef" />
+        <!--  mb1.setToday(todayRef);-->
+        <property name="random" ref="ran" />
+        <!--  mb1.setRandom(ran);   -->
+    </bean>
+
+    <bean id="mb2" class="com.kbsw.spring_mybatis.basic_ioc.ex1.MessageBeanKo"></bean>
+    <!--  MessageBean mb2=new MessageBeanKo() 와 동일   -->
+
+    <!--    생성자 injection-->
+    <bean id="mb3" class="com.kbsw.spring_mybatis.basic_ioc.ex1.MessageBeanKo">
+        <constructor-arg index="0" type="java.lang.String" value="매우 졸려요~~"/>
+        <constructor-arg index="1" type="java.util.Random" ref="ran"/>
+    </bean>
+    <!--  MessageBean mb2=new MessageBeanKo("매우 졸려요", ran) 와 동일   -->
+    <bean id="todayRef" class="java.util.Date" />
+    <!--    Date todayRef=new Date();-->
+    <bean id="ran" class="java.util.Random"/>
+
+</beans>

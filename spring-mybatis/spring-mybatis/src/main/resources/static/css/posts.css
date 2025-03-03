@@ -1,0 +1,71 @@
+@charset "utf-8";
+.wrap{
+    width:70%;
+    margin: 1em auto;
+}
+.wrap h1{
+    text-align:center;
+    margin: 1.2em;
+}
+.wrap ul{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+.wrap ul>li{
+    list-style:none;
+    float:left;
+}
+.wrap ul>li:nth-child(2n+1){
+    width:20%;
+    margin: 8px 0;
+}
+.wrap ul>li:nth-child(2n){
+    width:80%;
+    margin: 8px 0;
+}
+.wrap li input{
+    padding:5px;
+    width:80%;
+    border:1px solid #aaa;
+}
+.wrap li textarea{
+    width:100%;
+    height:350px;
+    padding:5px;
+    border:1px solid #aaa;
+}
+.clear{
+    clear:both;
+}
+
+#posts{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+#posts>li{
+    list-style:none;
+    float:left;
+    margin:5px 0;
+    height:35px;
+    line-height:35px;
+    border-bottom: 1px solid #ddd;
+}
+#posts>li:nth-child(5n+1){
+    width: 10%;
+}
+#posts>li:nth-child(5n+2){
+    width:40%;
+    text-align: left;
+}
+#posts>li:nth-child(5n+3){
+    width:20%;
+}
+#posts>li:nth-child(5n+4){
+    width:20%;
+}
+#posts>li:nth-child(5n){
+    width:10%;
+}
+
