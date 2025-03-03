@@ -3,7 +3,7 @@
     </div> <!-- .container end -->
 
     <!-- footer start ---------------- -->
-    <div class="footer">
+    <div class="footer container-fluid p-4 bg-secondary text-center">
         Footer  @copyright   서울 서초구 1번지  Tel:1577-1234
     </div>
 </body>

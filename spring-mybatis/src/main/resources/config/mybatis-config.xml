@@ -8,4 +8,8 @@
     <typeAliases>
     </typeAliases>
     -->
+    <typeAliases>
+        <!-- 별칭 등록 -->
+        <typeAlias type="com.kbsw.posts.model.PostDTO" alias="PostDTO" />
+    </typeAliases>
 </configuration>

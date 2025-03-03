@@ -7,7 +7,11 @@
         <title></title>
     </head>
     <body>
-        <h1>반가워요- message.jsp</h1>
-
+        <c:if test="${msg != null}">
+            <script>
+                alert("${msg}");
+                location.href="${loc}";
+            </script>
+        </c:if>
     </body>
 </html>

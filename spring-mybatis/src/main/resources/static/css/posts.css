@@ -18,7 +18,6 @@
 }
 .wrap ul>li:nth-child(2n+1){
     width:20%;
-    text-align:center;
     margin: 8px 0;
 }
 .wrap ul>li:nth-child(2n){
@@ -40,6 +39,33 @@
     clear:both;
 }
 
-
-
+#posts{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+#posts>li{
+    list-style:none;
+    float:left;
+    margin:5px 0;
+    height:35px;
+    line-height:35px;
+    border-bottom: 1px solid #ddd;
+}
+#posts>li:nth-child(5n+1){
+    width: 10%;
+}
+#posts>li:nth-child(5n+2){
+    width:40%;
+    text-align: left;
+}
+#posts>li:nth-child(5n+3){
+    width:20%;
+}
+#posts>li:nth-child(5n+4){
+    width:20%;
+}
+#posts>li:nth-child(5n){
+    width:10%;
+}
 

@@ -4,4 +4,79 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kbsw.posts.mapper.PostMapper">
 
+    <!--    mybatis-config.xml에 com.kbsw.posts.model.PostDTO 타입을 PostDTO로 별칭 등록함 -->
+    <insert id="insertPost" parameterType="PostDTO">
+        insert into posts(name,title,content,pwd,fileName,originFileName,fileSize)
+        values(#{name},#{title},#{content,jdbcType=VARCHAR},#{pwd},#{fileName:VARCHAR},
+        #{originFileName:VARCHAR},#{fileSize:INTEGER})
+    </insert>
+    <sql id="findWhere">
+        <if test="findType!='' and findKeyword !=''">
+            <where>
+                <if test="findType==1">
+                    title like  concat('%',trim(#{findKeyword}),'%')
+                </if>
+                <if test="findType==2">
+                    name like  concat('%',trim(#{findKeyword}),'%')
+                </if>
+                <if test="findType==3">
+                    content like  concat('%',trim(#{findKeyword}),'%')
+                </if>
+            </where>
+        </if>
+    </sql>
+
+
+    <select id="getTotalCount" parameterType="com.kbsw.posts.model.PagingDTO" resultType="_int">
+        select count(id) from posts
+        <include refid="findWhere"/>
+    </select>
+
+    <select id="listPost" parameterType="com.kbsw.posts.model.PagingDTO"  resultType="PostDTO" >
+        select * from posts
+        <include refid="findWhere"/>
+        order by id desc
+        limit #{pageSize} offset #{offset}
+    </select>
+
+    <update id="updateReadNum" parameterType="_int">
+        update posts
+        <set>
+            readNum=readNum+1
+        </set>
+        <where>
+            id=#{value}
+        </where>
+    </update>
+
+    <select id="findPostById" resultType="PostDTO" parameterType="_int">
+        select * from posts
+        <where>
+            id=#{value}
+        </where>
+    </select>
+
+    <delete id="deletePostById" parameterType="_int">
+        delete from posts
+        <where>
+            id=#{value}
+        </where>
+    </delete>
+
+    <update id="updatePost" parameterType="PostDTO">
+        update posts
+        <set>
+            title=#{title},name=#{name}, pwd=#{pwd},
+            content=#{content:VARCHAR}
+            <if test="fileName!=null and fileName !=''">
+                ,fileName=#{fileName},originFileName=#{originFileName}, fileSize=#{fileSize}
+            </if>
+        </set>
+        <where>
+            id=#{id}
+        </where>
+    </update>
+
 </mapper>
+
+

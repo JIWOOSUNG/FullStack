@@ -6,5 +6,13 @@
 </head>
 <body>
     <h1>Hello SpringBoot 3.4</h1>
+    <h3>2초 뒤에 Post 게시판으로 이동합니다</h3>
+
+    <script>
+        setTimeout(function(){
+            location.href='/posts/list';
+        },2000);
+    </script>
+
 </body>
 </html>
